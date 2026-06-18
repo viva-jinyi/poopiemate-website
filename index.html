@@ -12,9 +12,23 @@
   <meta property="og:image" content="assets/app-icon.png">
   <link rel="icon" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/app-icon.png">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.min.css">
   <style>
+    @font-face {
+      font-family: "NanumSquareNeo";
+      src: url("assets/fonts/NanumSquareNeo-bRg.ttf") format("truetype");
+      font-weight: 400 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "NanumSquareNeo";
+      src: url("assets/fonts/NanumSquareNeo-cBd.ttf") format("truetype");
+      font-weight: 700 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root {
       color-scheme: light;
       --bg: #ebf7f2;
@@ -41,7 +55,7 @@
       margin: 0;
       background: var(--bg);
       color: var(--ink);
-      font-family: "Pretendard Variable", Pretendard, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+      font-family: "NanumSquareNeo", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
       letter-spacing: 0;
     }
 
@@ -244,13 +258,28 @@
       margin-bottom: 16px;
       border-radius: 14px;
       background: var(--green-soft);
-      color: var(--green);
-      font-size: 22px;
     }
 
     .feature:nth-child(2) .feature-icon {
       background: var(--pink-soft);
-      color: var(--pink);
+    }
+
+    .feature-icon img {
+      display: block;
+      width: 23px;
+      height: 23px;
+      object-fit: contain;
+    }
+
+    .feature-icon.double {
+      gap: 4px;
+      width: auto;
+      padding: 0 11px;
+    }
+
+    .feature-icon.double img {
+      width: 22px;
+      height: 22px;
     }
 
     .feature h3 {
@@ -459,17 +488,24 @@
       </p>
       <div class="features">
         <article class="feature">
-          <div class="feature-icon" aria-hidden="true">✓</div>
+          <div class="feature-icon" aria-hidden="true">
+            <img src="assets/icons/nav_record_solid.svg" alt="">
+          </div>
           <h3>실시간 케어 기록</h3>
           <p>응가 비우기, 쉬 비우기, 산책 완료를 탭 한 번으로 기록하고 가족과 공유합니다.</p>
         </article>
         <article class="feature">
-          <div class="feature-icon" aria-hidden="true">%</div>
+          <div class="feature-icon double" aria-hidden="true">
+            <img src="assets/icons/poop.svg" alt="">
+            <img src="assets/icons/drop.svg" alt="">
+          </div>
           <h3>응가·쉬야 게이지</h3>
           <p>마지막 기록과 평소 텀을 기준으로 지금 나가야 할 가능성을 직관적으로 보여줍니다.</p>
         </article>
         <article class="feature">
-          <div class="feature-icon" aria-hidden="true">☂</div>
+          <div class="feature-icon" aria-hidden="true">
+            <img src="assets/icons/dog_walk.svg" alt="">
+          </div>
           <h3>날씨 기반 산책 판단</h3>
           <p>비 예보와 선호 산책 시간대를 참고해 산책 타이밍을 놓치지 않도록 돕습니다.</p>
         </article>
