@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>응가메이트 | PoopieMate</title>
-  <meta name="description" content="눈이오나 비가오나 실외배변 루틴을 지켜요">
+  <meta name="description" content="비가오나 눈이오나 실외배변 루틴을 지켜요">
   <meta name="theme-color" content="#ebf7f2">
   <meta property="og:title" content="응가메이트 💩✨">
-  <meta property="og:description" content="눈이오나 비가오나 실외배변 루틴을 지켜요">
+  <meta property="og:description" content="비가오나 눈이오나 실외배변 루틴을 지켜요">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://viva-jinyi.github.io/poopiemate-website/assets/og-image.png">
   <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon.png">
@@ -312,21 +312,14 @@
       font-weight: 700;
     }
 
-    .poster-strip {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(240px, 308px);
-      gap: 18px;
+    .poster-swiper,
+    .screen-swiper {
       margin-top: 30px;
-      padding: 2px 2px 20px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scrollbar-color: rgba(24, 149, 90, 0.45) transparent;
+      padding-bottom: 4px;
     }
 
-    .poster-card {
-      scroll-snap-align: start;
-      margin: 0;
+    .poster-swiper .swiper-slide {
+      width: 270px;
       border: 1px solid var(--line);
       border-radius: 28px;
       background: var(--bg);
@@ -334,9 +327,10 @@
       overflow: hidden;
     }
 
-    .poster-card img {
+    .poster-swiper .swiper-slide img {
       width: 100%;
       height: auto;
+      display: block;
     }
 
     .screen-band {
@@ -345,21 +339,8 @@
       border-bottom: 1px solid var(--line);
     }
 
-    .screen-rail {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(220px, 286px);
-      gap: 18px;
-      margin-top: 30px;
-      padding: 2px 2px 22px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scrollbar-color: rgba(24, 149, 90, 0.45) transparent;
-    }
-
-    .screen-card {
-      scroll-snap-align: start;
-      margin: 0;
+    .screen-swiper .swiper-slide {
+      width: 250px;
       padding: 10px;
       border: 1px solid var(--line);
       border-radius: 30px;
@@ -367,12 +348,15 @@
       box-shadow: 0 14px 34px rgba(24, 149, 90, 0.09);
     }
 
-    .screen-card img {
+    .screen-swiper .swiper-slide img {
       border-radius: 23px;
       background: var(--bg);
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
-    .screen-card figcaption {
+    .screen-swiper figcaption {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -383,7 +367,7 @@
       font-weight: 900;
     }
 
-    .screen-card strong {
+    .screen-swiper strong {
       color: var(--ink);
       font-size: 16px;
     }
@@ -622,31 +606,17 @@
       <p class="section-intro">
         대시보드 하나만 보여주는 대신, 실제 심사용 스크린샷 흐름 그대로 핵심 화면을 이어서 볼 수 있게 구성했습니다.
       </p>
-      <div class="poster-strip" aria-label="앱스토어 스크린샷 모음">
-        <figure class="poster-card">
-          <img src="assets/store/01.webp" alt="응가메이트 대표 스크린샷">
-        </figure>
-        <figure class="poster-card">
-          <img src="assets/store/02.webp" alt="실외배변 루틴 스크린샷">
-        </figure>
-        <figure class="poster-card">
-          <img src="assets/store/03.webp" alt="응가 대시보드 스크린샷">
-        </figure>
-        <figure class="poster-card">
-          <img src="assets/store/04.webp" alt="맞춤 설정 스크린샷">
-        </figure>
-        <figure class="poster-card">
-          <img src="assets/store/05.webp" alt="산책 안전도 스크린샷">
-        </figure>
-        <figure class="poster-card">
-          <img src="assets/store/06.webp" alt="알림 화면 스크린샷">
-        </figure>
-        <figure class="poster-card">
-          <img src="assets/store/07.webp" alt="가족 공유 기록 스크린샷">
-        </figure>
-        <figure class="poster-card">
-          <img src="assets/store/08.webp" alt="프로필과 가족 연결 스크린샷">
-        </figure>
+      <div class="swiper poster-swiper" aria-label="앱스토어 스크린샷 모음">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="assets/store/01.webp" alt="응가메이트 대표 스크린샷"></div>
+          <div class="swiper-slide"><img src="assets/store/02.webp" alt="실외배변 루틴 스크린샷"></div>
+          <div class="swiper-slide"><img src="assets/store/03.webp" alt="응가 대시보드 스크린샷"></div>
+          <div class="swiper-slide"><img src="assets/store/04.webp" alt="맞춤 설정 스크린샷"></div>
+          <div class="swiper-slide"><img src="assets/store/05.webp" alt="산책 안전도 스크린샷"></div>
+          <div class="swiper-slide"><img src="assets/store/06.webp" alt="알림 화면 스크린샷"></div>
+          <div class="swiper-slide"><img src="assets/store/07.webp" alt="가족 공유 기록 스크린샷"></div>
+          <div class="swiper-slide"><img src="assets/store/08.webp" alt="프로필과 가족 연결 스크린샷"></div>
+        </div>
       </div>
     </section>
 
@@ -656,27 +626,29 @@
         <p class="section-intro">
           홈, 산책, 공유 기록, 맞춤 알림, 마이 화면까지 앱 안에서 쓰는 화면 톤을 그대로 보여줍니다.
         </p>
-        <div class="screen-rail" aria-label="응가메이트 실제 앱 화면 모음">
-          <figure class="screen-card">
-            <img src="assets/screens/home.webp" alt="응가메이트 홈 대시보드 화면">
-            <figcaption><strong>홈</strong><span>대시보드</span></figcaption>
-          </figure>
-          <figure class="screen-card">
-            <img src="assets/screens/walk.webp" alt="응가메이트 산책 화면">
-            <figcaption><strong>산책</strong><span>날씨 판단</span></figcaption>
-          </figure>
-          <figure class="screen-card">
-            <img src="assets/screens/share.webp" alt="응가메이트 공유 기록 화면">
-            <figcaption><strong>기록</strong><span>가족 공유</span></figcaption>
-          </figure>
-          <figure class="screen-card">
-            <img src="assets/screens/alarm.webp" alt="응가메이트 맞춤 알림 화면">
-            <figcaption><strong>알림</strong><span>맞춤 케어</span></figcaption>
-          </figure>
-          <figure class="screen-card">
-            <img src="assets/screens/profile.webp" alt="응가메이트 마이 화면">
-            <figcaption><strong>마이</strong><span>가족 연결</span></figcaption>
-          </figure>
+        <div class="swiper screen-swiper" aria-label="응가메이트 실제 앱 화면 모음">
+          <div class="swiper-wrapper">
+            <figure class="swiper-slide">
+              <img src="assets/screens/home.webp" alt="응가메이트 홈 대시보드 화면">
+              <figcaption><strong>홈</strong><span>대시보드</span></figcaption>
+            </figure>
+            <figure class="swiper-slide">
+              <img src="assets/screens/walk.webp" alt="응가메이트 산책 화면">
+              <figcaption><strong>산책</strong><span>날씨 판단</span></figcaption>
+            </figure>
+            <figure class="swiper-slide">
+              <img src="assets/screens/share.webp" alt="응가메이트 공유 기록 화면">
+              <figcaption><strong>기록</strong><span>가족 공유</span></figcaption>
+            </figure>
+            <figure class="swiper-slide">
+              <img src="assets/screens/alarm.webp" alt="응가메이트 맞춤 알림 화면">
+              <figcaption><strong>알림</strong><span>맞춤 케어</span></figcaption>
+            </figure>
+            <figure class="swiper-slide">
+              <img src="assets/screens/profile.webp" alt="응가메이트 마이 화면">
+              <figcaption><strong>마이</strong><span>가족 연결</span></figcaption>
+            </figure>
+          </div>
         </div>
       </section>
     </div>
@@ -716,7 +688,20 @@
       autoplay: { delay: 3800, disableOnInteraction: false, pauseOnMouseEnter: true },
       pagination: { el: ".swiper-pagination", clickable: true },
       grabCursor: true,
-      effect: "slide",
+    });
+
+    new Swiper(".poster-swiper", {
+      slidesPerView: "auto",
+      spaceBetween: 18,
+      grabCursor: true,
+      freeMode: true,
+    });
+
+    new Swiper(".screen-swiper", {
+      slidesPerView: "auto",
+      spaceBetween: 18,
+      grabCursor: true,
+      freeMode: true,
     });
   </script>
 </body>
