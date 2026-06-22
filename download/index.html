@@ -18,8 +18,6 @@
       var ua = navigator.userAgent || navigator.vendor || window.opera;
       if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
         window.location.replace('https://apps.apple.com/kr/app/%EC%9D%91%EA%B0%80%EB%A9%94%EC%9D%B4%ED%8A%B8/id6781981502');
-      } else if (/android/i.test(ua)) {
-        window.location.replace('https://play.google.com/store/apps/details?id=com.pixelberry.poopiemate');
       } else {
         window.location.replace('../');
       }
