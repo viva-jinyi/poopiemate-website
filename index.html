@@ -10,8 +10,9 @@
   <meta property="og:description" content="실외배변 강아지를 함께 돌보는 가족을 위한 케어 싱크 앱">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://viva-jinyi.github.io/poopiemate-website/assets/og-image.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon.png">
-  <link rel="apple-touch-icon" href="assets/app-icon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <style>
     @font-face {
       font-family: "NanumSquareNeo";
@@ -248,94 +249,40 @@
       margin-left: auto;
     }
 
-    .slider-stage {
-      position: relative;
-      overflow: hidden;
+    .app-swiper {
       border: 1px solid rgba(255, 255, 255, 0.82);
       border-radius: 30px;
       background: #dff3ea;
       box-shadow: var(--shadow);
+      overflow: hidden;
     }
 
-    .slider-track {
-      display: flex;
-      transition: transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
-      will-change: transform;
-    }
-
-    .slide {
-      flex: 0 0 100%;
-      margin: 0;
+    .app-swiper .swiper-slide {
       background: #eaf8f2;
     }
 
-    .slide img {
+    .app-swiper .swiper-slide img {
       width: 100%;
       height: auto;
+      display: block;
     }
 
-    .slider-button {
-      position: absolute;
-      top: 50%;
-      z-index: 2;
-      display: grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      border: 1px solid rgba(216, 235, 227, 0.9);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.92);
-      color: var(--green);
-      cursor: pointer;
-      font-size: 28px;
-      font-weight: 900;
-      line-height: 1;
-      transform: translateY(-50%);
-      box-shadow: 0 8px 22px rgba(20, 121, 75, 0.18);
+    .app-swiper .swiper-pagination {
+      bottom: 12px;
     }
 
-    .slider-button.prev {
-      left: 12px;
-    }
-
-    .slider-button.next {
-      right: 12px;
-    }
-
-    .slider-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 900;
-    }
-
-    .slider-title {
-      color: var(--ink);
-    }
-
-    .slider-dots {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 13px;
-    }
-
-    .slider-dot {
-      width: 28px;
+    .app-swiper .swiper-pagination-bullet {
+      width: 8px;
       height: 8px;
-      padding: 0;
-      border: 0;
-      border-radius: 999px;
-      background: rgba(24, 149, 90, 0.18);
-      cursor: pointer;
+      background: rgba(255, 255, 255, 0.55);
+      opacity: 1;
+      transition: all 0.3s;
     }
 
-    .slider-dot.is-active {
-      background: var(--green);
+    .app-swiper .swiper-pagination-bullet-active {
+      background: #fff;
+      width: 22px;
+      border-radius: 999px;
     }
 
     main {
@@ -596,12 +543,6 @@
         width: min(100%, 340px);
       }
 
-      .slider-button {
-        width: 38px;
-        height: 38px;
-        font-size: 25px;
-      }
-
       .section {
         padding: 56px 18px;
       }
@@ -657,42 +598,20 @@
         <p class="hero-note">iOS 출시 완료 · Google Play 출시 준비 중</p>
       </div>
 
-      <div class="slider-shell" data-slider>
-        <div class="slider-stage">
-          <button class="slider-button prev" type="button" aria-label="이전 스크린샷" data-prev>‹</button>
-          <div class="slider-track" data-track>
-            <figure class="slide" data-title="응가메이트">
-              <img src="assets/store/01.webp" alt="응가메이트 앱스토어 대표 스크린샷">
-            </figure>
-            <figure class="slide" data-title="날씨 루틴">
-              <img src="assets/store/02.webp" alt="비와 눈이 오는 날의 실외배변 루틴 스크린샷">
-            </figure>
-            <figure class="slide" data-title="응가 대시보드">
-              <img src="assets/store/03.webp" alt="응가 대시보드 앱 화면 스크린샷">
-            </figure>
-            <figure class="slide" data-title="맞춤 설정">
-              <img src="assets/store/04.webp" alt="맞춤 설정 앱 화면 스크린샷">
-            </figure>
-            <figure class="slide" data-title="산책 안전도">
-              <img src="assets/store/05.webp" alt="산책 안전도 앱 화면 스크린샷">
-            </figure>
-            <figure class="slide" data-title="놓치지 않아요">
-              <img src="assets/store/06.webp" alt="맞춤 알림 앱 화면 스크린샷">
-            </figure>
-            <figure class="slide" data-title="가족 공유 기록">
-              <img src="assets/store/07.webp" alt="가족 공유 기록 앱 화면 스크린샷">
-            </figure>
-            <figure class="slide" data-title="딱 맞게">
-              <img src="assets/store/08.webp" alt="가족 연결과 공유 기록 관리 스크린샷">
-            </figure>
+      <div class="slider-shell">
+        <div class="swiper app-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/store/01.webp" alt="응가메이트 앱스토어 대표 스크린샷"></div>
+            <div class="swiper-slide"><img src="assets/store/02.webp" alt="비와 눈이 오는 날의 실외배변 루틴 스크린샷"></div>
+            <div class="swiper-slide"><img src="assets/store/03.webp" alt="응가 대시보드 앱 화면 스크린샷"></div>
+            <div class="swiper-slide"><img src="assets/store/04.webp" alt="맞춤 설정 앱 화면 스크린샷"></div>
+            <div class="swiper-slide"><img src="assets/store/05.webp" alt="산책 안전도 앱 화면 스크린샷"></div>
+            <div class="swiper-slide"><img src="assets/store/06.webp" alt="맞춤 알림 앱 화면 스크린샷"></div>
+            <div class="swiper-slide"><img src="assets/store/07.webp" alt="가족 공유 기록 앱 화면 스크린샷"></div>
+            <div class="swiper-slide"><img src="assets/store/08.webp" alt="가족 연결과 공유 기록 관리 스크린샷"></div>
           </div>
-          <button class="slider-button next" type="button" aria-label="다음 스크린샷" data-next>›</button>
+          <div class="swiper-pagination"></div>
         </div>
-        <div class="slider-meta">
-          <span class="slider-title" data-slide-title>응가메이트</span>
-          <span data-slide-count>1 / 8</span>
-        </div>
-        <div class="slider-dots" aria-label="스크린샷 선택" data-dots></div>
       </div>
     </div>
   </section>
@@ -790,79 +709,15 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    const slider = document.querySelector("[data-slider]");
-
-    if (slider) {
-      const track = slider.querySelector("[data-track]");
-      const slides = Array.from(track.children);
-      const prev = slider.querySelector("[data-prev]");
-      const next = slider.querySelector("[data-next]");
-      const title = slider.querySelector("[data-slide-title]");
-      const count = slider.querySelector("[data-slide-count]");
-      const dots = slider.querySelector("[data-dots]");
-      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      let current = 0;
-      let timer = null;
-
-      slides.forEach((slide, index) => {
-        const dot = document.createElement("button");
-        dot.type = "button";
-        dot.className = "slider-dot";
-        dot.setAttribute("aria-label", `${index + 1}번 스크린샷 보기`);
-        dot.addEventListener("click", () => {
-          setSlide(index);
-          restart();
-        });
-        dots.appendChild(dot);
-      });
-
-      const dotButtons = Array.from(dots.children);
-
-      function setSlide(index) {
-        current = (index + slides.length) % slides.length;
-        track.style.transform = `translateX(${-current * 100}%)`;
-        title.textContent = slides[current].dataset.title;
-        count.textContent = `${current + 1} / ${slides.length}`;
-        dotButtons.forEach((dot, dotIndex) => {
-          dot.classList.toggle("is-active", dotIndex === current);
-          dot.setAttribute("aria-current", dotIndex === current ? "true" : "false");
-        });
-      }
-
-      function start() {
-        if (prefersReducedMotion || timer) return;
-        timer = window.setInterval(() => setSlide(current + 1), 4200);
-      }
-
-      function stop() {
-        window.clearInterval(timer);
-        timer = null;
-      }
-
-      function restart() {
-        stop();
-        start();
-      }
-
-      prev.addEventListener("click", () => {
-        setSlide(current - 1);
-        restart();
-      });
-
-      next.addEventListener("click", () => {
-        setSlide(current + 1);
-        restart();
-      });
-
-      slider.addEventListener("mouseenter", stop);
-      slider.addEventListener("mouseleave", start);
-      slider.addEventListener("focusin", stop);
-      slider.addEventListener("focusout", start);
-
-      setSlide(0);
-      start();
-    }
+    new Swiper(".app-swiper", {
+      loop: true,
+      autoplay: { delay: 3800, disableOnInteraction: false, pauseOnMouseEnter: true },
+      pagination: { el: ".swiper-pagination", clickable: true },
+      grabCursor: true,
+      effect: "slide",
+    });
   </script>
 </body>
 </html>
