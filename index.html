@@ -236,7 +236,7 @@
     /* ── HERO LEFT ── */
     h1 {
       font-size: clamp(26px, 3vw, 44px);
-      line-height: 1.26;
+      line-height: 1.45;
       font-weight: 900;
       letter-spacing: -0.02em;
       word-break: keep-all;
@@ -419,9 +419,23 @@
       .features-section { padding: 60px 0 68px; }
     }
     @media (max-width: 600px) {
-      .features-grid { grid-template-columns: 1fr; }
-      .features-inner { padding: 0 20px; }
-      .features-header { margin-bottom: 36px; }
+      .features-inner { padding: 0; }
+      .features-header { margin-bottom: 36px; padding: 0 20px; }
+      /* 스와이퍼 */
+      .features-grid {
+        display: flex; flex-wrap: nowrap;
+        gap: 14px;
+        overflow-x: auto; scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 4px 16px 16px 24px;
+        scroll-padding-left: 24px;
+      }
+      .features-grid::-webkit-scrollbar { display: none; }
+      .feature-card {
+        flex: 0 0 80vw; max-width: 80vw;
+        scroll-snap-align: start;
+      }
     }
 
     /* ── SUPPORT SECTION ── */
@@ -477,6 +491,8 @@
       .nav-links { gap: 14px; font-size: 13px; }
       .page-wrap { padding: 0 24px; }
       .phone-shell { width: min(360px, 90vw); }
+      .hero-left { text-align: center; }
+      .app-preview { margin-left: auto; margin-right: auto; }
       .support-inner { padding: 44px 20px; }
       .footer-inner { flex-direction: column; align-items: flex-start; gap: 8px; padding: 20px; }
     }
