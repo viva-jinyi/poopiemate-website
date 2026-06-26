@@ -762,6 +762,41 @@ window.addEventListener('scroll', () => {
 
   document.addEventListener('mouseup', onEnd);
 })();
+
+// ── 모바일 폰 iframe 스케일 ──
+(function() {
+  const DESIGN_W = 393;
+  const DESIGN_H = 852;
+  const SHELL_PAD = 14; // 7px × 2
+
+  function scalePhone() {
+    const shell = document.querySelector('.phone-shell');
+    const screen = document.querySelector('.phone-screen');
+    if (!shell || !screen) return;
+
+    const innerW = shell.offsetWidth - SHELL_PAD;
+    if (innerW < DESIGN_W) {
+      const scale = innerW / DESIGN_W;
+      screen.style.width = DESIGN_W + 'px';
+      screen.style.height = DESIGN_H + 'px';
+      screen.style.aspectRatio = 'unset';
+      screen.style.transform = 'scale(' + scale + ')';
+      screen.style.transformOrigin = 'top left';
+      shell.style.height = (DESIGN_H * scale + SHELL_PAD) + 'px';
+    } else {
+      screen.style.width = '';
+      screen.style.height = '';
+      screen.style.aspectRatio = '';
+      screen.style.transform = '';
+      screen.style.transformOrigin = '';
+      shell.style.height = '';
+    }
+  }
+
+  window.addEventListener('resize', scalePhone);
+  document.addEventListener('DOMContentLoaded', scalePhone);
+  scalePhone();
+})();
 </script>
 </body>
 </html>
