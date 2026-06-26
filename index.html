@@ -229,8 +229,8 @@
       grid-template-columns: 1fr 380px;
       gap: 60px;
       align-items: center;
-      height: calc(100vh - 74px);
-      padding: 24px 0;
+      min-height: calc(100vh - 74px);
+      padding: 60px 0;
     }
 
     /* ── HERO LEFT ── */
@@ -301,7 +301,7 @@
     }
     .phone-shell {
       position: relative;
-      width: 400px;
+      width: clamp(300px, calc((100vh - 194px) * 393 / 852), 400px);
       background: linear-gradient(160deg, #f0f0f0 0%, #e2e2e2 55%, #ececec 100%);
       border-radius: 52px;
       padding: 7px;
