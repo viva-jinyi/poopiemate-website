@@ -333,7 +333,7 @@
       position: absolute; inset: 0; z-index: 10;
       background-size: cover; background-position: center;
       display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
-      padding-bottom: 40px;
+      padding-bottom: 60px;
       transition: opacity 0.4s ease;
     }
     .splash-overlay::before {
@@ -343,21 +343,21 @@
     .splash-overlay.hidden { opacity: 0; pointer-events: none; }
     .splash-content {
       position: relative; z-index: 1;
-      display: flex; flex-direction: column; align-items: center; gap: 0;
+      display: flex; flex-direction: column; align-items: center;
     }
-    .splash-poop-logo { margin-bottom: 4px; }
-    .splash-text-logo { width: 180px; }
+    .splash-poop-logo { display: block; }
+    .splash-text-logo { width: 240px; margin-top: 6px; }
     .splash-tagline {
-      margin-top: 8px; text-align: center;
-      font-size: 11px; font-weight: 700; color: #CEF4E9;
-      line-height: 1.5; letter-spacing: -0.2px;
+      margin-top: 10px; text-align: center;
+      font-size: 13px; font-weight: 700; color: #CEF4E9;
+      line-height: 1.6; letter-spacing: -0.2px;
     }
     .splash-divider {
-      margin-top: 18px;
-      display: flex; align-items: center; gap: 10px;
+      margin-top: 22px;
+      display: flex; align-items: center; gap: 12px;
     }
-    .splash-divider-line { width: 40px; height: 1px; background: rgba(255,255,255,0.35); }
-    .splash-heart { font-size: 10px; color: #F7B6D6; }
+    .splash-divider-line { width: 48px; height: 1px; background: rgba(255,255,255,0.35); }
+    .splash-heart { font-size: 12px; color: #F7B6D6; }
     .status-bar {
       flex-shrink: 0; height: 50px;
       display: flex; align-items: flex-end; padding: 0 22px 9px;
@@ -594,7 +594,7 @@
           <div class="splash-overlay" id="splashOverlay">
             <div class="splash-content">
               <!-- 응가메이트 로고 -->
-              <svg class="splash-poop-logo" width="72" height="72" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+              <svg class="splash-poop-logo" width="90" height="90" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
                 <path fill="#ffffff" d="M117.35,86.95c.37-6.73-6.94-14.77-21.33-13.4l-1.1.05c-.57-9.62-10.01-16.05-20.08-17.42-.74-.07-1.42.67-1.12,1.29,2.5,6.42-2.48,10.31-7.01,14.36-4.42,3.7-9.94,9.42-8.86,17.13.21.96.49,2.12,1.06,3.26-6.43,4.16-9.52,12.59-4.38,19.59-5.48,4.87-8.28,12.6-5.89,19.98,2.04,6.26,7.33,11.24,14.98,13.08,8.36,2.13,18.56,1.4,37.25-4.67,16.19-5.26,27.6-9.8,33.92-17.74,4.68-5.75,6.35-12.59,3.77-20.52-2.69-8.31-11.57-14.5-21.23-14.97h0Z"/>
                 <path fill="#ffffff" d="M55.72,58.88c8.48-2.85,12-11.97,8.31-23.76-2.94-9.39-13.35-21-24.02-17.42-7.87,2.65-12.37,12.65-8.71,24.28,2.94,9.39,12.89,20.78,24.45,16.9h-.01Z"/>
                 <path fill="#ffffff" d="M91.92,47.64c9.11-2.64,14.47-15.04,10.21-29.17-2.92-9.46-10.59-17.97-19.82-14.8-8.56,2.93-13.43,15.16-10.87,27.02,2.44,10.29,10.37,20.23,20.48,16.95h0Z"/>
