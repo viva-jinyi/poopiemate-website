@@ -329,35 +329,62 @@
       user-select: none; -webkit-user-select: none;
       display: flex; flex-direction: column;
     }
+    /* ── 스플래시 (앱 랜딩 화면 1:1 복제) ── */
     .splash-overlay {
       position: absolute; inset: 0; z-index: 10;
       background-size: cover; background-position: center;
-      display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
-      padding-bottom: 60px;
       transition: opacity 0.4s ease;
+      overflow: hidden;
     }
     .splash-overlay::before {
       content: ''; position: absolute; inset: 0;
-      background: rgba(0,0,0,0.18);
+      background: rgba(0,0,0,0.18); z-index: 0;
     }
     .splash-overlay.hidden { opacity: 0; pointer-events: none; }
-    .splash-content {
-      position: relative; z-index: 1;
+    /* ScrollView: flex-grow justify-end gap-4 px-6 pb-5 pt-10 */
+    .splash-scroll {
+      position: absolute; inset: 0; z-index: 1;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 40px 24px 20px; gap: 16px;
+    }
+    /* items-center pb-4 */
+    .splash-brand {
       display: flex; flex-direction: column; align-items: center;
+      padding-bottom: 16px;
     }
-    .splash-poop-logo { display: block; }
-    .splash-text-logo { width: 240px; margin-top: 6px; }
+    .splash-text-logo { width: 220px; display: block; margin-top: 0; }
+    /* mt-2 text-sm font-bold leading-5 text-mint */
     .splash-tagline {
-      margin-top: 10px; text-align: center;
-      font-size: 13px; font-weight: 700; color: #CEF4E9;
-      line-height: 1.6; letter-spacing: -0.2px;
+      margin-top: 8px; text-align: center;
+      font-size: 14px; font-weight: 700; color: #CEF4E9;
+      line-height: 20px;
     }
+    /* mt-6 flex-row items-center gap-3 */
     .splash-divider {
-      margin-top: 22px;
+      margin-top: 24px;
       display: flex; align-items: center; gap: 12px;
     }
-    .splash-divider-line { width: 48px; height: 1px; background: rgba(255,255,255,0.35); }
-    .splash-heart { font-size: 12px; color: #F7B6D6; }
+    .splash-divider-line { width: 56px; height: 1px; background: rgba(255,255,255,0.35); }
+    /* mt-5 text-center text-body leading-7 text-white */
+    .splash-body {
+      margin-top: 20px; text-align: center;
+      font-size: 16px; font-weight: 400; color: #fff;
+      line-height: 28px;
+    }
+    /* mt-10 h-[20px] placeholder for buttons */
+    .splash-btn-placeholder { margin-top: 40px; height: 20px; }
+    /* mt-4 flex-row justify-center gap-2 language switcher */
+    .splash-lang {
+      margin-top: 16px;
+      display: flex; flex-direction: row; align-items: center;
+      justify-content: center; gap: 8px;
+    }
+    .splash-lang-btn {
+      font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.38);
+      background: none; border: none; cursor: default; padding: 0;
+    }
+    .splash-lang-btn.active { color: #ffffff; }
+    .splash-lang-divider { width: 1px; height: 12px; background: rgba(255,255,255,0.3); }
     .status-bar {
       flex-shrink: 0; height: 50px;
       display: flex; align-items: flex-end; padding: 0 22px 9px;
@@ -590,11 +617,12 @@
     <div class="hero-right" id="demo">
       <div class="phone-shell">
         <div class="phone-screen">
-          <!-- 스플래시 오버레이 -->
+          <!-- 스플래시 오버레이 (앱 랜딩화면 1:1) -->
           <div class="splash-overlay" id="splashOverlay">
-            <div class="splash-content">
-              <!-- 응가메이트 로고 -->
-              <svg class="splash-poop-logo" width="90" height="90" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+            <div class="splash-scroll">
+              <div class="splash-brand">
+              <!-- 응가메이트 로고 72px -->
+              <svg width="72" height="72" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
                 <path fill="#ffffff" d="M117.35,86.95c.37-6.73-6.94-14.77-21.33-13.4l-1.1.05c-.57-9.62-10.01-16.05-20.08-17.42-.74-.07-1.42.67-1.12,1.29,2.5,6.42-2.48,10.31-7.01,14.36-4.42,3.7-9.94,9.42-8.86,17.13.21.96.49,2.12,1.06,3.26-6.43,4.16-9.52,12.59-4.38,19.59-5.48,4.87-8.28,12.6-5.89,19.98,2.04,6.26,7.33,11.24,14.98,13.08,8.36,2.13,18.56,1.4,37.25-4.67,16.19-5.26,27.6-9.8,33.92-17.74,4.68-5.75,6.35-12.59,3.77-20.52-2.69-8.31-11.57-14.5-21.23-14.97h0Z"/>
                 <path fill="#ffffff" d="M55.72,58.88c8.48-2.85,12-11.97,8.31-23.76-2.94-9.39-13.35-21-24.02-17.42-7.87,2.65-12.37,12.65-8.71,24.28,2.94,9.39,12.89,20.78,24.45,16.9h-.01Z"/>
                 <path fill="#ffffff" d="M91.92,47.64c9.11-2.64,14.47-15.04,10.21-29.17-2.92-9.46-10.59-17.97-19.82-14.8-8.56,2.93-13.43,15.16-10.87,27.02,2.44,10.29,10.37,20.23,20.48,16.95h0Z"/>
@@ -608,8 +636,19 @@
               <!-- 하트 구분선 -->
               <div class="splash-divider">
                 <div class="splash-divider-line"></div>
-                <span class="splash-heart">♥</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#F7B6D6"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                 <div class="splash-divider-line"></div>
+              </div>
+              <!-- 바디 텍스트 -->
+              <p class="splash-body">가족과 함께<br>우리 강아지의 배변 타이밍을<br>놓치지 마세요</p>
+              </div>
+              <!-- 버튼 자리 (없음) -->
+              <div class="splash-btn-placeholder"></div>
+              <!-- 언어 선택 -->
+              <div class="splash-lang">
+                <span class="splash-lang-btn active">한국어</span>
+                <div class="splash-lang-divider"></div>
+                <span class="splash-lang-btn">English</span>
               </div>
             </div>
           </div>
