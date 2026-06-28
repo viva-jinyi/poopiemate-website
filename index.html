@@ -325,9 +325,20 @@
     }
     .phone-screen {
       position: relative; border-radius: 46px; overflow: hidden;
-      background: #000; aspect-ratio: 393 / 852;
+      background: #EBF7F2; aspect-ratio: 393 / 852;
       user-select: none; -webkit-user-select: none;
       display: flex; flex-direction: column;
+    }
+    .splash-overlay {
+      position: absolute; inset: 0; z-index: 10;
+      background: #fff;
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity 0.4s ease;
+    }
+    .splash-overlay.hidden { opacity: 0; pointer-events: none; }
+    .splash-icon {
+      width: 96px; height: 96px;
+      border-radius: 22px;
     }
     .status-bar {
       flex-shrink: 0; height: 50px;
@@ -561,6 +572,10 @@
     <div class="hero-right" id="demo">
       <div class="phone-shell">
         <div class="phone-screen">
+          <!-- 스플래시 오버레이 -->
+          <div class="splash-overlay" id="splashOverlay">
+            <img class="splash-icon" src="./icon-ios.png" alt="응가메이트" />
+          </div>
           <!-- 상태바 오버레이 -->
           <div class="status-bar">
             <span class="status-time" id="statusTime">10:14</span>
@@ -659,6 +674,16 @@
 </footer>
 
 <script>
+// ── 아이프레임 로드 후 스플래시 제거 ──
+(function() {
+  const iframe = document.querySelector('.phone-iframe');
+  const splash = document.getElementById('splashOverlay');
+  if (!iframe || !splash) return;
+  iframe.addEventListener('load', function() {
+    setTimeout(function() { splash.classList.add('hidden'); }, 300);
+  });
+})();
+
 // ── 상태바 시계 ──
 function updateStatusTime() {
   const el = document.getElementById('statusTime');
