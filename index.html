@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- ── Primary SEO ── -->
-  <title>응가메이트 💩✨️</title>
+  <title>응가메이트 💩✨️ — 강아지 배변·산책 루틴 관리 앱</title>
   <meta name="description" content="강아지 응가·쉬야·산책을 한눈에 기록하고 가족과 공유하세요. 배변 텀 알림, 산책 안전 지수, 날씨 기반 타이밍까지. 진도믹스·믹스견·반려견 실외배변 루틴 필수 앱.">
   <meta name="keywords" content="응가메이트, PoopieMate, 강아지 배변 앱, 반려견 앱, 실외배변, 강아지 산책 앱, 강아지 배변 기록, 반려견 배변 관리, 배변 텀 알림, 진도믹스, 반려견 산책 루틴, 강아지 배변 훈련, 강아지 케어 앱, 반려동물 앱, 강아지 산책 안전, 산책 안전 지수, 강아지 배변 일지, 반려견 건강 기록, 강아지 일기 앱, 가족 반려견 공유">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -496,6 +496,30 @@
       }
     }
 
+    /* ── FAQ SECTION ── */
+    .faq-section { background: #fff; border-top: 1px solid var(--line); padding: 80px 0 88px; }
+    .faq-inner { max-width: 760px; margin: 0 auto; padding: 0 32px; }
+    .faq-list { display: flex; flex-direction: column; gap: 12px; margin-top: 36px; }
+    .faq-item {
+      background: var(--bg); border: 1px solid var(--line);
+      border-radius: 16px; padding: 4px 22px;
+    }
+    .faq-item summary {
+      list-style: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 18px 0; font-size: 15px; font-weight: 900; color: var(--ink);
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+'; font-size: 20px; font-weight: 400; color: var(--green);
+      flex: 0 0 auto; transition: transform 0.2s;
+    }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item p {
+      font-size: 14px; font-weight: 700; color: var(--muted);
+      line-height: 1.75; padding: 0 0 20px; word-break: keep-all;
+    }
+
     /* ── SUPPORT SECTION ── */
     .support-section { background: var(--bg); border-top: 1px solid var(--line); position: relative; }
     .support-inner {
@@ -713,6 +737,34 @@
         <h3>가족 공유</h3>
         <p>가족이 함께<br>하나의 프로필을 공유해요.<br>누가 응가를 기록했는지<br>실시간으로 확인.</p>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ (JSON-LD FAQPage와 동일한 내용을 화면에 노출) -->
+<section id="faq" class="faq-section" aria-label="자주 묻는 질문">
+  <div class="faq-inner">
+    <div class="features-header" style="margin-bottom:0;">
+      <span class="features-eyebrow">FAQ</span>
+      <h2 class="features-title">자주 묻는 질문</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>응가메이트는 어떤 앱인가요?</summary>
+        <p>응가메이트는 강아지의 응가·쉬야·산책을 기록하고 가족과 실시간 공유하는 반려견 배변·산책 관리 앱입니다. 배변 텀 알림, 날씨 기반 산책 안전 지수, 루틴 시간 설정 기능을 제공합니다.</p>
+      </details>
+      <details class="faq-item">
+        <summary>실외배변 강아지에게 맞는 앱인가요?</summary>
+        <p>네. 응가메이트는 실외배변을 하는 강아지를 위해 설계되었습니다. 산책 중 배변 기록, 배변 텀 관리, 산책 루틴 알림 기능으로 실외배변 습관을 체계적으로 관리할 수 있습니다.</p>
+      </details>
+      <details class="faq-item">
+        <summary>진도믹스 강아지도 사용할 수 있나요?</summary>
+        <p>물론입니다. 견종에 상관없이 모든 반려견에게 사용할 수 있으며, 강아지의 체형·털 타입·건강 정보를 입력하면 맞춤 산책 안전 지수를 제공합니다.</p>
+      </details>
+      <details class="faq-item">
+        <summary>가족과 강아지 배변 기록을 함께 볼 수 있나요?</summary>
+        <p>네. 가족 초대 기능으로 여러 보호자가 하나의 강아지 프로필을 공유할 수 있습니다. 가족 구성원 각자의 기록이 실시간으로 반영되어 배변·산책 현황을 함께 확인할 수 있습니다.</p>
+      </details>
     </div>
   </div>
 </section>
