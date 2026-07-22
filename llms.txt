@@ -37,6 +37,6 @@
 
 픽셀베리 (Pixelberry)
 - 이메일: jin@pixelberry.io
-- 웹사이트: https://viva-jinyi.github.io/poopiemate-website/
+- 웹사이트: https://poopiemate.com/
 - 개인정보처리방침: https://viva-jinyi.github.io/poopiemate-legal/privacy-ko
 - 이용약관: https://viva-jinyi.github.io/poopiemate-legal/terms-ko
