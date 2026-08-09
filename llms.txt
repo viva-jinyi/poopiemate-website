@@ -40,3 +40,13 @@
 - 웹사이트: https://poopiemate.com/
 - 개인정보처리방침: https://viva-jinyi.github.io/poopiemate-legal/privacy-ko
 - 이용약관: https://viva-jinyi.github.io/poopiemate-legal/terms-ko
+
+## English
+
+> Poopie Mate is a free dog care app where family members share potty (poopie/pee) and walk records in real time. When one caregiver logs it, everyone in the family is notified instantly. Also built for outdoor-potty dogs, Jindo mixes, and mixed breeds, with potty interval alerts and a weather-based walk safety score.
+
+Full English site: https://poopiemate.com/en/
+- iOS App Store: https://apps.apple.com/app/id6781981502
+- Android (Google Play): https://play.google.com/store/apps/details?id=com.pixelberry.poopiemate&hl=en
+- Privacy Policy: https://viva-jinyi.github.io/poopiemate-legal/privacy-en
+- Terms of Service: https://viva-jinyi.github.io/poopiemate-legal/terms-en
