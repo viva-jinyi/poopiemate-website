@@ -214,14 +214,9 @@
       transition: fill 0.3s, stroke 0.3s;
     }
     .site-header.scrolled .brand-icon-svg { fill: var(--green); stroke: var(--green); }
-    /* 투명 헤더 = 흰 워드마크. scrolled = 검정 */
-    .brand-wordmark { height: 46px; width: auto; filter: brightness(10); transition: filter 0.3s; }
-    .site-header.scrolled .brand-wordmark { filter: brightness(0); }
-    .brand-wordmark-en {
-      font-size: 21px; font-weight: 900; letter-spacing: -0.01em;
-      color: #fff; transition: color 0.3s; white-space: nowrap;
-    }
-    .site-header.scrolled .brand-wordmark-en { color: var(--ink); }
+    /* 투명 헤더 = 흰 워드마크. scrolled = 그린 */
+    .brand-wordmark { height: 37px; width: auto; filter: none; transition: filter 0.3s; }
+    .site-header.scrolled .brand-wordmark { filter: brightness(0) saturate(100%) invert(42%) sepia(55%) saturate(962%) hue-rotate(103deg) brightness(89%) contrast(87%); }
 
     .nav-links {
       display: flex; align-items: center; gap: 20px;
@@ -372,11 +367,6 @@
       padding-bottom: 16px;
     }
     .splash-text-logo { width: 220px; display: block; margin-top: 0; }
-    .splash-text-logo-en {
-      width: 220px; text-align: center; margin-top: 0;
-      font-size: 32px; font-weight: 900; letter-spacing: -0.02em;
-      line-height: 1.15; color: #fff;
-    }
     /* mt-2 text-sm font-bold leading-5 text-mint */
     .splash-tagline {
       margin-top: 8px; text-align: center;
@@ -562,7 +552,7 @@
     }
     @media (max-width: 600px) {
       .nav { padding: 12px 24px; }
-      .brand-wordmark { height: 36px; }
+      .brand-wordmark { height: 29px; }
       .nav-links { gap: 14px; font-size: 13px; }
       .page-wrap { padding: 0 24px; }
       .phone-shell { width: min(360px, 90vw); }
@@ -585,7 +575,7 @@
         <path d="M37.86,96.7c22.48-9.86-5.24-43.18-21.91-35.65-20.43,8.98,3.29,42.01,21.91,35.64h0ZM18.48,65.71c9.36-5.68,31.98,18.1,16.98,26.41-10.34,4.88-29.98-17.55-16.98-26.41Z"/>
         <path d="M124.08,27.57c-17.72,3.32-22.12,45.31,2.18,40.27,16.36-3.13,20-42.74-2.2-40.26h.01ZM125.65,62.89c-14.99,3.51-13.74-27.55-1.86-30.18,13.93-2.67,13.59,26.76,1.86,30.18Z"/>
       </svg>
-      <span class="brand-wordmark brand-wordmark-en">Poopie Mate</span>
+      <img class="brand-wordmark" src="/assets/brand/poopiemate-text-en.svg" alt="Poopie Mate">
     </a>
     <div class="nav-links">
       <a href="#support">Support</a>
@@ -650,7 +640,7 @@
                 <path fill="#ffffff" d="M124.77,27.45c-11.45,3.2-18.03,18.71-14.1,30.96,2.27,6.45,7.78,12.12,16.35,9.31,10.01-3.29,16.94-16.83,12.84-29.88-2.17-7.06-8.2-11.89-15.1-10.37h.01Z"/>
               </svg>
               <!-- Poopie Mate text logo (EN) -->
-              <div class="splash-text-logo-en">Poopie Mate</div>
+              <img class="splash-text-logo" src="/assets/brand/poopiemate-text-en.svg" alt="Poopie Mate">
               <!-- 태그라인 -->
               <p class="splash-tagline">"Did they poop today?"<br>You'll never have to ask again</p>
               <!-- 하트 구분선 -->
