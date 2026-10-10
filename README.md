@@ -1,6 +1,6 @@
 # poopiemate-website (moved)
 
-The PoopieMate website now lives at **[poopiemate.com](https://poopiemate.com)**,
+The POOPIEMATE website now lives at **[poopiemate.com](https://poopiemate.com)**,
 built from [`poopiemate/poopiemate-website`](https://github.com/poopiemate/poopiemate-website).
 
 This small repo keeps the old address `viva-jinyi.github.io/poopiemate-website/` working —
