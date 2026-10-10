@@ -1,7 +1,4 @@
-# poopiemate-website (moved)
+# poopiemate-website-redirect (archived)
 
-The POOPIEMATE website now lives at **[poopiemate.com](https://poopiemate.com)**,
-built from [`poopiemate/poopiemate-website`](https://github.com/poopiemate/poopiemate-website).
-
-This small repo keeps the old address `viva-jinyi.github.io/poopiemate-website/` working —
-app versions up to 2.0.0 use it in KakaoTalk invite messages — by forwarding every path to poopiemate.com.
+This repository briefly forwarded the old website address `viva-jinyi.github.io/poopiemate-website/` to **[poopiemate.com](https://poopiemate.com)**.
+That job is now done by [`viva-jinyi/viva-jinyi.github.io`](https://github.com/viva-jinyi/viva-jinyi.github.io), and the website itself is built from [`poopiemate/poopiemate-website`](https://github.com/poopiemate/poopiemate-website).
